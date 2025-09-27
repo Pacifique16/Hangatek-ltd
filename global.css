@@ -966,8 +966,9 @@
         
         
         .country-code-select {
-         
-            flex: 0 0 33%;
+            flex: 0 0 140px; /* Increased from 33% to 140px to fit flags better */
+            font-size: 14px; /* Slightly smaller font for better fit */
+            
         }
         
         .phone-number-input {
@@ -1004,19 +1005,6 @@
             flex: 1;
         }
         
-        .checkbox-group {
-            margin: 20px 0;
-        }
-        
-        .checkbox-option {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-        
-        .checkbox-option input[type="checkbox"] {
-            margin-right: 10px;
-        }
         
         /* Make sure the modal is scrollable if content is too long */
         .modal-content {
@@ -1024,13 +1012,6 @@
             overflow-y: auto;
         }
 
-        .form-section-title {
-            font-size: 1.2rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid var(--light-color);
-        }
 
         /* Center texts inside the modal */
       
