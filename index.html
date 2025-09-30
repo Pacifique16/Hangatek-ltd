@@ -404,47 +404,64 @@
                     <div class="contact-details">
                         <div class="contact-detail">
                             <i class="fas fa-map-marker-alt"></i>
-                            <p>123 Tech Street, Innovation District<br>San Francisco, CA 94103</p>
+                            <p>Visit Anytime<br>
+                                <a href="https://www.google.com/maps?q=11+KG+248+St,+Kigali,+Rwanda" target="_blank">11 KG 248 St, Kigali, Rwanda</a></p>
                         </div>
                         <div class="contact-detail">
                             <i class="fas fa-phone"></i>
-                            <p>+250 789 534 491</p>
+                            <p>Have any question?<br>
+                                <a href="tel: +250789534491">+(250) 789 534 491</a></p>
                         </div>
                         <div class="contact-detail">
                             <i class="fas fa-envelope"></i>
-                            <p>info@hangatek.com</p>
+                            <p>Write us email<br>
+                                <a href="mailto:info@hangatek.com">info@hangatek.com</a></p>
                         </div>
                         <div class="contact-detail">
                             <i class="fas fa-clock"></i>
-                            <p>Monday - Saturday: 9AM - 6PM</p>
+                            <p>Working hours<br>Mon - Sat: 9AM - 6PM</p>
                         </div>
                     </div>
                     <div class="contact-social">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 <div class="contact-form">
                     <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" required>
+                        <p>Whether you're interested in our products, seeking a partnership, or want to discuss custom work, we'd love to hear from you.</p>
+                        <br>
+                        <!-- Full Name + Email -->
+                        <div class="form-row">
+                            <div class="form-group half-width">  
+                                <input type="text" id="name" name="name" required placeholder="Your Full Name">
+                            </div>
+                            <div class="form-group half-width">
+                                <input type="email" id="email" name="email" required placeholder="Your Email Address">
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" required>
+
+                        <!-- Subject + Phone -->
+                        <div class="form-row">
+                            <div class="form-group half-width">
+                                <input type="text" id="subject" name="subject" required placeholder="Subject">
+                            </div>
+                            <div class="form-group half-width">
+                                <input type="tel" id="phone" name="phone" placeholder="Phone Number">
+                            </div>
                         </div>
+
+                        <!-- Message -->
                         <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required>
+                            <textarea id="message" name="message" required placeholder="Type your message here"></textarea>
                         </div>
+
+                        <!-- Submit -->
                         <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" required></textarea>
+                            <button type="submit" class="btn">Send Message</button>
                         </div>
-                        <button type="submit" class="btn">Send Message</button>
                     </form>
                 </div>
             </div>

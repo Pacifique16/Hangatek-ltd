@@ -398,6 +398,7 @@
             transition: all 0.3s ease;
             text-decoration: none;  /* removes underline */
        }
+
        .whatsapp-float:hover {
             transform: scale(1.1);
        }
@@ -743,13 +744,24 @@
             background-color: var(--secondary-color);
             transform: translateY(-5px);
         }
+
+        .contact-detail a {
+            color: inherit;           /* same color as surrounding text */
+            text-decoration: none;    /* remove underline */
+        }
+
+        .contact-detail a:hover {
+            color: var(--secondary-color); /* highlight on hover */
+        }
+
         
         .contact-form {
             flex: 1;
         }
         
         .form-group {
-            margin-bottom: 20px;
+            gap: 10px;
+            margin-bottom: 8px;
         }
         
         .form-group label {
@@ -971,13 +983,9 @@
             
         }
         
-        .phone-number-input {
-            
+        .phone-number-input {  
             flex: 1;
         }
-        
-
-       
 
         .form-row {
             display: flex;
@@ -998,9 +1006,7 @@
             gap: 1%;
             width: 100%;
         }
-        
-       
-        
+
         .phone-number-input {
             flex: 1;
         }
