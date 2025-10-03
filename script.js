@@ -123,6 +123,26 @@
             }
         });
 
+
+        // ▶︎ Add this to re-enable the Prev button (place after testimonialNext handler)
+        testimonialPrev.addEventListener('click', () => {
+            // If we're not at the first slide, move one right
+            if (testimonialPosition < 0) {
+                testimonialPosition += testimonialItemWidth;
+                testimonialsContainer.style.transform = `translateX(${testimonialPosition}px)`;
+            } else {
+                // If at first slide, wrap to the last slide
+                testimonialPosition = -testimonialItemWidth * (testimonialItems.length - 1);
+                testimonialsContainer.style.transition = 'none';
+                testimonialsContainer.style.transform = `translateX(${testimonialPosition}px)`;
+                // restore transition for smooth next moves
+                setTimeout(() => {
+                    testimonialsContainer.style.transition = '';
+                }, 50);
+            }
+        });
+
+
         // Testimonials navigation
         testimonialNext.addEventListener('click', () => {
             if (testimonialPosition > -testimonialItemWidth * (testimonialItems.length - 1)) {
