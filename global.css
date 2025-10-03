@@ -1,3 +1,4 @@
+
        /* Global Styles */
         :root {
             --primary-color: #2c3e50;
@@ -261,6 +262,11 @@
         }
         
         .carousel-control {
+/* Make only the play/pause circle red */
+.carousel-control#testimonialPlayPause {
+    background-color: var(--secondary-color) !important;
+    color: white !important;
+}
             background-color: rgba(255, 255, 255, 0.2);
             color: white;
             width: 40px;
@@ -495,11 +501,13 @@
         
         .testimonials-container {
             display: flex;
+                gap: 1px;
             transition: transform 0.5s ease;
         }
         
         .testimonial {
             min-width: 100%;
+            margin-right: 0px;
             padding: 30px;
             background-color: white;
             border-radius: 10px;

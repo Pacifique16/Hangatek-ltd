@@ -7,8 +7,9 @@
         const carouselPrev = document.getElementById('carouselPrev');
         const carouselNext = document.getElementById('carouselNext');
         const testimonialsContainer = document.getElementById('testimonialsContainer');
-        const testimonialPrev = document.getElementById('testimonialPrev');
-        const testimonialNext = document.getElementById('testimonialNext');
+    const testimonialPrev = document.getElementById('testimonialPrev');
+    const testimonialNext = document.getElementById('testimonialNext');
+    const testimonialPlayPause = document.getElementById('testimonialPlayPause');
         const faqItems = document.querySelectorAll('.faq-item');
         const contactForm = document.getElementById('contactForm');
         const requestModal = document.getElementById('requestModal');
@@ -24,7 +25,9 @@
 
         // Variables
         let carouselPosition = 0;
-        let testimonialPosition = 0;
+    let testimonialPosition = 0;
+    let testimonialAutoPlay = true;
+    let testimonialInterval;
         const carouselItems = document.querySelectorAll('.service-card');
         const testimonialItems = document.querySelectorAll('.testimonial');
         const carouselItemWidth = carouselItems[0].offsetWidth + 30; // width + margin
@@ -125,15 +128,64 @@
             if (testimonialPosition > -testimonialItemWidth * (testimonialItems.length - 1)) {
                 testimonialPosition -= testimonialItemWidth;
                 testimonialsContainer.style.transform = `translateX(${testimonialPosition}px)`;
+            } else {
+                // Animate sliding left back to the first card
+                testimonialPosition = 0;
+                testimonialsContainer.style.transition = 'none';
+                testimonialsContainer.style.transform = `translateX(${testimonialPosition}px)`;
+                // Force reflow then restore transition for smooth effect
+                setTimeout(() => {
+                    testimonialsContainer.style.transition = '';
+                }, 50);
             }
         });
 
-        testimonialPrev.addEventListener('click', () => {
-            if (testimonialPosition < 0) {
-                testimonialPosition += testimonialItemWidth;
-                testimonialsContainer.style.transform = `translateX(${testimonialPosition}px)`;
+        // Remove testimonialPrev event to prevent sliding right
+
+        // Play/Pause button logic
+        testimonialPlayPause.addEventListener('click', () => {
+            testimonialAutoPlay = !testimonialAutoPlay;
+            const icon = testimonialPlayPause.querySelector('i');
+            if (testimonialAutoPlay) {
+                icon.classList.remove('fa-play');
+                icon.classList.add('fa-pause');
+                startTestimonialAutoPlay();
+            } else {
+                icon.classList.remove('fa-pause');
+                icon.classList.add('fa-play');
+                stopTestimonialAutoPlay();
             }
         });
+
+        function startTestimonialAutoPlay() {
+            stopTestimonialAutoPlay();
+            testimonialInterval = setInterval(() => {
+                if (testimonialPosition > -testimonialItemWidth * (testimonialItems.length - 1)) {
+                    testimonialPosition -= testimonialItemWidth;
+                    testimonialsContainer.style.transform = `translateX(${testimonialPosition}px)`;
+                } else {
+                    testimonialPosition = 0;
+                    testimonialsContainer.style.transition = 'none';
+                    testimonialsContainer.style.transform = `translateX(${testimonialPosition}px)`;
+                    setTimeout(() => {
+                        testimonialsContainer.style.transition = '';
+                    }, 50);
+                }
+            }, 5000);
+        }
+
+        function stopTestimonialAutoPlay() {
+            if (testimonialInterval) {
+                clearInterval(testimonialInterval);
+                testimonialInterval = null;
+            }
+        }
+
+        // Start autoplay on load
+    // Set initial icon to pause (since autoplay starts enabled)
+    testimonialPlayPause.querySelector('i').classList.remove('fa-play');
+    testimonialPlayPause.querySelector('i').classList.add('fa-pause');
+    startTestimonialAutoPlay();
 
         // FAQ accordion
         faqItems.forEach(item => {
@@ -234,15 +286,7 @@
         checkScroll();
 
         // Auto rotate testimonials
-        setInterval(() => {
-            if (testimonialPosition > -testimonialItemWidth * (testimonialItems.length - 1)) {
-                testimonialPosition -= testimonialItemWidth;
-                testimonialsContainer.style.transform = `translateX(${testimonialPosition}px)`;
-            } else {
-                testimonialPosition = 0;
-                testimonialsContainer.style.transform = `translateX(${testimonialPosition}px)`;
-            }
-        }, 5000);
+        // ...existing code...
 
 
         // Request project modal - UPDATED to ensure it works with the new form
