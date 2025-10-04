@@ -220,6 +220,15 @@
             margin-bottom: 60px;
         }
         
+
+        .service-icon-img {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 20px;
+            object-fit: contain; /* keeps proportions */
+        }
+
+
         .services-carousel {
             position: relative;
             max-width: 1000px;
@@ -242,6 +251,13 @@
             color: var(--text-color);
             text-align: center;
         }
+
+        .service-card p {
+            font-size: 1rem;   /* same as about section text */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* same global font */
+            line-height: 1.6;  /* same spacing */
+        }
+
         
         .service-card i {
             font-size: 40px;
