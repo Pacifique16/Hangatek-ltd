@@ -258,6 +258,20 @@
             line-height: 1.6;  /* same spacing */
         }
 
+        /* smooth transition and allow vertical page scroll while still enabling horizontal swipe handling */
+        .carousel-container {
+        display: flex;
+        transition: transform 0.4s ease;
+        /* allow vertical panning by the browser; horizontal swipes will still work for our JS */
+        touch-action: pan-y;
+        }
+
+        /* hide arrow controls on small screens if you want only swipe */
+        @media (max-width: 768px) {
+        .carousel-controls { display: none; }
+        }
+
+
         
         .service-card i {
             font-size: 40px;
