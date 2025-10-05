@@ -7,9 +7,9 @@
         const carouselPrev = document.getElementById('carouselPrev');
         const carouselNext = document.getElementById('carouselNext');
         const testimonialsContainer = document.getElementById('testimonialsContainer');
-    const testimonialPrev = document.getElementById('testimonialPrev');
-    const testimonialNext = document.getElementById('testimonialNext');
-    const testimonialPlayPause = document.getElementById('testimonialPlayPause');
+        const testimonialPrev = document.getElementById('testimonialPrev');
+        const testimonialNext = document.getElementById('testimonialNext');
+        const testimonialPlayPause = document.getElementById('testimonialPlayPause');
         const faqItems = document.querySelectorAll('.faq-item');
         const contactForm = document.getElementById('contactForm');
         const requestModal = document.getElementById('requestModal');
@@ -25,9 +25,9 @@
 
         // Variables
         let carouselPosition = 0;
-    let testimonialPosition = 0;
-    let testimonialAutoPlay = true;
-    let testimonialInterval;
+        let testimonialPosition = 0;
+        let testimonialAutoPlay = true;
+        let testimonialInterval;
         const carouselItems = document.querySelectorAll('.service-card');
         const testimonialItems = document.querySelectorAll('.testimonial');
         const carouselItemWidth = carouselItems[0].offsetWidth + 30; // width + margin
@@ -202,10 +202,10 @@
         }
 
         // Start autoplay on load
-    // Set initial icon to pause (since autoplay starts enabled)
-    testimonialPlayPause.querySelector('i').classList.remove('fa-play');
-    testimonialPlayPause.querySelector('i').classList.add('fa-pause');
-    startTestimonialAutoPlay();
+        // Set initial icon to pause (since autoplay starts enabled)
+        testimonialPlayPause.querySelector('i').classList.remove('fa-play');
+        testimonialPlayPause.querySelector('i').classList.add('fa-pause');
+        startTestimonialAutoPlay();
 
         // FAQ accordion
         faqItems.forEach(item => {
@@ -367,6 +367,45 @@
                 document.body.style.overflow = 'auto'; // Restore scrolling
             }
         });
+
+        // --- Touch Swipe Support for Carousel (Mobile) ---
+        let startX = 0;
+        let currentX = 0;
+        let isDragging = false;
+
+        carouselContainer.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+        });
+
+        carouselContainer.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        currentX = e.touches[0].clientX;
+        });
+
+        carouselContainer.addEventListener('touchend', () => {
+        if (!isDragging) return;
+        const diffX = startX - currentX;
+        
+        // Minimum swipe distance (to avoid accidental touches)
+        if (Math.abs(diffX) > 50) {
+            if (diffX > 0) {
+            // Swiped left → Next slide
+            if (carouselPosition > -carouselItemWidth * (carouselItems.length - 1)) {
+                carouselPosition -= carouselItemWidth;
+            }
+            } else {
+            // Swiped right → Previous slide
+            if (carouselPosition < 0) {
+                carouselPosition += carouselItemWidth;
+            }
+            }
+            carouselContainer.style.transform = `translateX(${carouselPosition}px)`;
+        }
+        
+        isDragging = false;
+        });
+                // --- End Touch Swipe Support ---
 
 
         
