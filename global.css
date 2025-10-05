@@ -268,7 +268,9 @@
 
         /* hide arrow controls on small screens if you want only swipe */
         @media (max-width: 768px) {
-        .carousel-controls { display: none; }
+            .carousel-controls {
+                display: none !important;
+            }
         }
 
 
