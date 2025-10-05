@@ -374,36 +374,37 @@
         let isDragging = false;
 
         carouselContainer.addEventListener('touchstart', (e) => {
-        startX = e.touches[0].clientX;
-        isDragging = true;
+            startX = e.touches[0].clientX;
+            isDragging = true;
         });
 
         carouselContainer.addEventListener('touchmove', (e) => {
-        if (!isDragging) return;
-        currentX = e.touches[0].clientX;
+            if (!isDragging) return;
+            currentX = e.touches[0].clientX;
         });
 
         carouselContainer.addEventListener('touchend', () => {
-        if (!isDragging) return;
-        const diffX = startX - currentX;
-        
-        // Minimum swipe distance (to avoid accidental touches)
-        if (Math.abs(diffX) > 50) {
-            if (diffX > 0) {
-            // Swiped left → Next slide
-            if (carouselPosition > -carouselItemWidth * (carouselItems.length - 1)) {
-                carouselPosition -= carouselItemWidth;
+            if (!isDragging) return;
+            const diffX = startX - currentX;
+            // Minimum swipe distance (to avoid accidental touches)
+            if (Math.abs(diffX) > 50) {
+                if (diffX > 0) {
+                    // Swiped left → Next slide
+                    if (carouselPosition > -carouselItemWidth * (carouselItems.length - 1)) {
+                        carouselPosition -= carouselItemWidth;
+                        carouselContainer.style.transition = 'transform 0.4s ease';
+                        carouselContainer.style.transform = `translateX(${carouselPosition}px)`;
+                    }
+                } else {
+                    // Swiped right → Previous slide
+                    if (carouselPosition < 0) {
+                        carouselPosition += carouselItemWidth;
+                        carouselContainer.style.transition = 'transform 0.4s ease';
+                        carouselContainer.style.transform = `translateX(${carouselPosition}px)`;
+                    }
+                }
             }
-            } else {
-            // Swiped right → Previous slide
-            if (carouselPosition < 0) {
-                carouselPosition += carouselItemWidth;
-            }
-            }
-            carouselContainer.style.transform = `translateX(${carouselPosition}px)`;
-        }
-        
-        isDragging = false;
+            isDragging = false;
         });
                 // --- End Touch Swipe Support ---
 
