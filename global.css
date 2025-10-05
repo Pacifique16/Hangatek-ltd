@@ -266,13 +266,6 @@
         touch-action: pan-y;
         }
 
-        /* hide arrow controls on small screens if you want only swipe */
-        @media (max-width: 768px) {
-            .carousel-controls {
-                display: none !important;
-            }
-        }
-
 
         
         .service-card i {
