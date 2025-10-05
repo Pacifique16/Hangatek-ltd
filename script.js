@@ -375,6 +375,7 @@
 
         carouselContainer.addEventListener('touchstart', (e) => {
             startX = e.touches[0].clientX;
+            currentX = startX;
             isDragging = true;
         });
 
@@ -392,17 +393,20 @@
                     // Swiped left → Next slide
                     if (carouselPosition > -carouselItemWidth * (carouselItems.length - 1)) {
                         carouselPosition -= carouselItemWidth;
-                        carouselContainer.style.transition = 'transform 0.4s ease';
-                        carouselContainer.style.transform = `translateX(${carouselPosition}px)`;
                     }
                 } else {
                     // Swiped right → Previous slide
                     if (carouselPosition < 0) {
                         carouselPosition += carouselItemWidth;
-                        carouselContainer.style.transition = 'transform 0.4s ease';
-                        carouselContainer.style.transform = `translateX(${carouselPosition}px)`;
                     }
                 }
+                // Clamp carouselPosition to valid range
+                const minPosition = -carouselItemWidth * (carouselItems.length - 1);
+                const maxPosition = 0;
+                if (carouselPosition < minPosition) carouselPosition = minPosition;
+                if (carouselPosition > maxPosition) carouselPosition = maxPosition;
+                carouselContainer.style.transition = 'transform 0.4s ease';
+                carouselContainer.style.transform = `translateX(${carouselPosition}px)`;
             }
             isDragging = false;
         });
