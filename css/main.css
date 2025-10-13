@@ -1,0 +1,20 @@
+/* Main CSS File - Imports all component styles */
+
+/* Base Styles */
+@import url('base.css');
+
+/* Component Styles */
+@import url('components/header.css');
+@import url('components/footer.css');
+@import url('components/modals.css');
+@import url('components/whatsapp.css');
+
+/* Section Styles */
+@import url('sections/hero.css');
+@import url('sections/about.css');
+@import url('sections/services.css');
+@import url('sections/portfolio.css');
+@import url('sections/testimonials.css');
+@import url('sections/team.css');
+@import url('sections/faq.css');
+@import url('sections/contact.css');

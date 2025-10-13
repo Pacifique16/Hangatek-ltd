@@ -1,0 +1,105 @@
+/* Modals */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 900px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #999;
+    transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+    color: var(--secondary-color);
+}
+
+/* Form Styles for Modals */
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.half-width {
+    flex: 1;
+}
+
+.third-width {
+    flex: 1;
+}
+
+.phone-input-group {
+    display: flex;
+    gap: 1%;
+    width: 100%;
+}
+
+.country-code-select {
+    flex: 0 0 140px;
+    font-size: 14px;
+}
+
+.phone-number-input {
+    flex: 1;
+}
+
+.form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: white;
+}
+
+.request-text-center {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+#requestForm .btn {
+    display: block;
+    margin: 20px auto;
+}
+
+/* Responsive Modal Forms */
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+    }
+    
+    .half-width, .third-width {
+        width: 100%;
+    }
+}
+
+.form-group.half-width {
+    width: 100%;
+}

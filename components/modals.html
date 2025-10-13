@@ -1,0 +1,265 @@
+<!-- Modals Component -->
+<!-- WhatsApp Float Button -->
+<a href="https://wa.me/250789534491" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Request Project Modal -->
+<div class="modal" id="requestModal">
+    <div class="modal-content">
+        <span class="modal-close" id="modalClose">&times;</span>
+        <h2 class="section-text-center">Start a Project</h2>
+        <p class="request-text-center">Fill out the form below to get started with your project. We'll get back to you within 24 hours.</p>
+        <br>
+        <form id="requestForm">
+            <!-- First Name and Last Name on the same line -->
+            <div class="form-row">
+                <div class="form-group half-width">
+                    <label for="firstName">First Name*</label>
+                    <input type="text" id="firstName" name="firstName" required placeholder="Enter your first name">
+                </div>
+                <div class="form-group half-width">
+                    <label for="lastName">Last Name*</label>
+                    <input type="text" id="lastName" name="lastName" required placeholder="Enter your last name">
+                </div>
+            </div>
+            
+            <!-- Company Name and Phone Number on the same line -->
+            <div class="form-row">
+                <div class="form-group half-width">
+                    <label for="companyName">Company Name</label>
+                    <input type="text" id="companyName" name="companyName" placeholder="Enter your company name">
+                </div>
+                <div class="form-group half-width">
+                    <label for="phoneNumber">Phone Number*</label>
+                    <div class="phone-input-group">
+                        <select id="countryCode" name="countryCode" class="country-code-select" required>
+                            <option value="+1">🇺🇸 +1</option>
+                            <option value="+44">🇬🇧 +44</option>
+                            <option value="+250" selected>🇷🇼 +250</option>
+                            <option value="+254">🇰🇪 +254</option>
+                            <option value="+256">🇺🇬 +256</option>
+                            <option value="+27">🇿🇦 +27</option>
+                            <option value="+233">🇬🇭 +233</option>
+                            <option value="+234">🇳🇬 +234</option>
+                            <option value="+20">🇪🇬 +20</option>
+                            <option value="+91">🇮🇳 +91</option>
+                            <option value="+81">🇯🇵 +81</option>
+                            <option value="+61">🇦🇺 +61</option>
+                            <option value="+49">🇩🇪 +49</option>
+                            <option value="+33">🇫🇷 +33</option>
+                            <option value="+39">🇮🇹 +39</option>
+                            <option value="+86">🇨🇳 +86</option>
+                            <option value="+7">🇷🇺 +7</option>
+                            <option value="+55">🇧🇷 +55</option>
+                            <option value="+34">🇪🇸 +34</option>
+                            <option value="+46">🇸🇪 +46</option>
+                            <option value="+31">🇳🇱 +31</option>
+                            <option value="+41">🇨🇭 +41</option>
+                            <option value="+64">🇳🇿 +64</option>
+                            <option value="+93">🇦🇫 +93</option>
+                            <option value="+355">🇦🇱 +355</option>
+                            <option value="+213">🇩🇿 +213</option>
+                            <option value="+376">🇦🇩 +376</option>
+                            <option value="+244">🇦🇴 +244</option>
+                            <option value="+54">🇦🇷 +54</option>
+                            <option value="+374">🇦🇲 +374</option>
+                            <option value="+43">🇦🇹 +43</option>
+                            <option value="+994">🇦🇿 +994</option>
+                            <option value="+973">🇧🇭 +973</option>
+                            <option value="+880">🇧🇩 +880</option>
+                            <option value="+32">🇧🇪 +32</option>
+                            <option value="+501">🇧🇿 +501</option>
+                            <option value="+975">🇧🇹 +975</option>
+                            <option value="+591">🇧🇴 +591</option>
+                            <option value="+387">🇧🇦 +387</option>
+                            <option value="+267">🇧🇼 +267</option>
+                            <option value="+359">🇧🇬 +359</option>
+                            <option value="+226">🇧🇫 +226</option>
+                            <option value="+257">🇧🇮 +257</option>
+                            <option value="+855">🇰🇭 +855</option>
+                            <option value="+237">🇨🇲 +237</option>
+                            <option value="+1">🇨🇦 +1</option>
+                            <option value="+238">🇨🇻 +238</option>
+                            <option value="+56">🇨🇱 +56</option>
+                            <option value="+57">🇨🇴 +57</option>
+                            <option value="+506">🇨🇷 +506</option>
+                            <option value="+385">🇭🇷 +385</option>
+                            <option value="+53">🇨🇺 +53</option>
+                            <option value="+357">🇨🇾 +357</option>
+                            <option value="+420">🇨🇿 +420</option>
+                            <option value="+45">🇩🇰 +45</option>
+                            <option value="+593">🇪🇨 +593</option>
+                            <option value="+503">🇸🇻 +503</option>
+                            <option value="+251">🇪🇹 +251</option>
+                            <option value="+358">🇫🇮 +358</option>
+                            <option value="+241">🇬🇦 +241</option>
+                            <option value="+995">🇬🇪 +995</option>
+                            <option value="+30">🇬🇷 +30</option>
+                            <option value="+504">🇭🇳 +504</option>
+                            <option value="+36">🇭🇺 +36</option>
+                            <option value="+354">🇮🇸 +354</option>
+                            <option value="+62">🇮🇩 +62</option>
+                            <option value="+98">🇮🇷 +98</option>
+                            <option value="+964">🇮🇶 +964</option>
+                            <option value="+353">🇮🇪 +353</option>
+                            <option value="+972">🇮🇱 +972</option>
+                            <option value="+82">🇰🇷 +82</option>
+                            <option value="+965">🇰🇼 +965</option>
+                            <option value="+961">🇱🇧 +961</option>
+                            <option value="+423">🇱🇮 +423</option>
+                            <option value="+370">🇱🇹 +370</option>
+                            <option value="+352">🇱🇺 +352</option>
+                            <option value="+389">🇲🇰 +389</option>
+                            <option value="+60">🇲🇾 +60</option>
+                            <option value="+52">🇲🇽 +52</option>
+                            <option value="+976">🇲🇳 +976</option>
+                            <option value="+212">🇲🇦 +212</option>
+                            <option value="+977">🇳🇵 +977</option>
+                            <option value="+47">🇳🇴 +47</option>
+                            <option value="+92">🇵🇰 +92</option>
+                            <option value="+51">🇵🇪 +51</option>
+                            <option value="+63">🇵🇭 +63</option>
+                            <option value="+48">🇵🇱 +48</option>
+                            <option value="+351">🇵🇹 +351</option>
+                            <option value="+974">🇶🇦 +974</option>
+                            <option value="+40">🇷🇴 +40</option>
+                            <option value="+966">🇸🇦 +966</option>
+                            <option value="+381">🇷🇸 +381</option>
+                            <option value="+65">🇸🇬 +65</option>
+                            <option value="+421">🇸🇰 +421</option>
+                            <option value="+386">🇸🇮 +386</option>
+                            <option value="+94">🇱🇰 +94</option>
+                            <option value="+963">🇸🇾 +963</option>
+                            <option value="+66">🇹🇭 +66</option>
+                            <option value="+90">🇹🇷 +90</option>
+                            <option value="+380">🇺🇦 +380</option>
+                            <option value="+971">🇦🇪 +971</option>
+                            <option value="+58">🇻🇪 +58</option>
+                            <option value="+84">🇻🇳 +84</option>
+                            <option value="+967">🇾🇪 +967</option>
+                            <option value="+260">🇿🇲 +260</option>
+                            <option value="+263">🇿🇼 +263</option>
+                        </select>
+
+                        <input type="tel" id="phoneNumber" name="phoneNumber" class="phone-number-input" required placeholder="Enter your phone number">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project Type, Budget Range, and Timeline on the same line -->
+            <div class="form-row">
+                <div class="form-group third-width">
+                    <label for="projectType">Project Type*</label>
+                    <select id="projectType" name="projectType" required>
+                        <option value="">Select project type</option>
+                        <option value="web">Web Application</option>
+                        <option value="app">Mobile Application</option>
+                        <option value="ui/ux">UI/UX Design</option>
+                        <option value="consultancy">IT Consultancy</option>
+                        <option value="custom">Custom Solutions</option>
+                        <option value="e-commerce">E-Commerce Platform</option>
+                        <option value="digital">Digital Marketing</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group third-width">
+                    <label for="budgetRange">Budget Range*</label>
+                    <select id="budgetRange" name="budgetRange" required>
+                        <option value="">Select budget range</option>
+                        <option value="under-1k">Under $1,000</option>
+                        <option value="1k-2k">$1,000 - $2,000</option>
+                        <option value="2k-5k">$2,000 - $5,000</option>
+                        <option value="5k-10k">$5,000 - $10,000</option>
+                        <option value="10k-50k">$10,000 - $50,000</option>
+                        <option value="over-50k">Over $50,000</option>
+                    </select>
+                </div>
+                <div class="form-group third-width">
+                    <label for="timeline">Timeline*</label>
+                    <select id="timeline" name="timeline" required>
+                        <option value="">Select timeline</option>
+                        <option value="urgent">Urgent (Less than 1 month)</option>
+                        <option value="1-3months">1-3 months</option>
+                        <option value="3-6months">3-6 months</option>
+                        <option value="6-12months">6-12 months</option>
+                        <option value="12plus">Above 1 year</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Project Description -->
+            <div class="form-group">
+                <label for="projectDescription">Project Description*</label>
+                <textarea id="projectDescription" name="projectDescription" required placeholder="Describe your project in detail....."></textarea>
+            </div>
+            
+            <!-- Preferred Contact Method -->
+            <div class="form-group">
+                <label for="contactMethod">Preferred Contact Method*</label>
+                <select id="contactMethod" name="contactMethod" required>
+                    <option value="">Select preferred contact method</option>
+                    <option value="email">Email</option>
+                    <option value="phone">Phone</option>
+                    <option value="whatsapp">WhatsApp</option>
+                </select>
+            </div>
+            
+            <!-- How did you hear about us? -->
+            <div class="form-group">
+                <label for="hearAboutUs">How did you hear about us?</label>
+                <select id="hearAboutUs" name="hearAboutUs">
+                    <option value="">Select an option</option>
+                    <option value="search">Search Engine</option>
+                    <option value="social">Social Media</option>
+                    <option value="referral">Referral</option>
+                    <option value="previous">Previous Client</option>
+                    <option value="advertisement">Advertisement</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            
+            <button type="submit" class="btn">Submit Project Request</button>
+
+            <p class="request-text-center">We'll review your request and send you a detailed quote within 24 hours. All information is kept confidential.</p>
+        </form>
+    </div>
+</div>
+
+<!-- Feedback Modal -->
+<div class="modal" id="feedbackModal">
+    <div class="modal-content">
+        <span class="modal-close" id="feedbackModalClose">&times;</span>
+        <h2>Leave Feedback</h2>
+        <form id="feedbackForm">
+            <div class="form-group">
+                <label for="feedbackName">Full Name</label>
+                <input type="text" id="feedbackName" name="feedbackName" required>
+            </div>
+            <div class="form-group">
+                <label for="feedbackEmail">Email Address</label>
+                <input type="email" id="feedbackEmail" name="feedbackEmail" required>
+            </div>
+            <div class="form-group">
+                <label for="feedbackCompany">Company</label>
+                <input type="text" id="feedbackCompany" name="feedbackCompany">
+            </div>
+            <div class="form-group">
+                <label for="feedbackRating">Rating</label>
+                <select id="feedbackRating" name="feedbackRating" required>
+                    <option value="">Select Rating</option>
+                    <option value="5">5 Stars</option>
+                    <option value="4">4 Stars</option>
+                    <option value="3">3 Stars</option>
+                    <option value="2">2 Stars</option>
+                    <option value="1">1 Star</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="feedbackMessage">Your Feedback</label>
+                <textarea id="feedbackMessage" name="feedbackMessage" required></textarea>
+            </div>
+            <button type="submit" class="btn">Submit Feedback</button>
+        </form>
+    </div>
+</div>

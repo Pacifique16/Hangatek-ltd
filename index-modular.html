@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangatek - Code Your Future</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    
+    <!-- Header Component -->
+    <div id="header-container"></div>
+
+    <!-- Hero Section -->
+    <div id="hero-container"></div>
+
+    <!-- About Section -->
+    <div id="about-container"></div>
+
+    <!-- Services Section -->
+    <div id="services-container"></div>
+
+    <!-- Portfolio Section -->
+    <div id="portfolio-container"></div>
+
+    <!-- Testimonials Section -->
+    <div id="testimonials-container"></div>
+
+    <!-- Team Section -->
+    <div id="team-container"></div>
+
+    <!-- FAQ Section -->
+    <div id="faq-container"></div>
+
+    <!-- Contact Section -->
+    <div id="contact-container"></div>
+
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
+
+    <!-- Modals Component -->
+    <div id="modals-container"></div>
+
+    <script type="module" src="js/main.js"></script>
+    <script>
+        // Load HTML components
+        async function loadComponent(containerId, filePath) {
+            try {
+                const response = await fetch(filePath);
+                const html = await response.text();
+                document.getElementById(containerId).innerHTML = html;
+            } catch (error) {
+                console.error(`Error loading ${filePath}:`, error);
+            }
+        }
+
+        // Load all components when DOM is ready
+        document.addEventListener('DOMContentLoaded', async () => {
+            await Promise.all([
+                loadComponent('header-container', 'components/header.html'),
+                loadComponent('hero-container', 'sections/hero.html'),
+                loadComponent('about-container', 'sections/about.html'),
+                loadComponent('services-container', 'sections/services.html'),
+                loadComponent('portfolio-container', 'sections/portfolio.html'),
+                loadComponent('testimonials-container', 'sections/testimonials.html'),
+                loadComponent('team-container', 'sections/team.html'),
+                loadComponent('faq-container', 'sections/faq.html'),
+                loadComponent('contact-container', 'sections/contact.html'),
+                loadComponent('footer-container', 'components/footer.html'),
+                loadComponent('modals-container', 'components/modals.html')
+            ]);
+        });
+    </script>
+</body>
+</html>

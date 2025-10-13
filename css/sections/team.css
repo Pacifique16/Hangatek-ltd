@@ -1,0 +1,82 @@
+/* Team Section */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.team-member {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.team-image {
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+.team-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+.team-member:hover .team-image img {
+    transform: scale(1.1);
+}
+
+.team-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(44, 62, 80, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.team-member:hover .team-overlay {
+    opacity: 1;
+}
+
+.team-social {
+    color: white;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.team-social:hover {
+    color: var(--secondary-color);
+    transform: translateY(-5px);
+}
+
+.team-details {
+    padding: 20px;
+    text-align: center;
+}
+
+.team-name {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.team-role {
+    color: var(--secondary-color);
+    font-weight: 500;
+}
